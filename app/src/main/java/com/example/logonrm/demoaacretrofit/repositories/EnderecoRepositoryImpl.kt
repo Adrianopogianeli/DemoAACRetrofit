@@ -48,6 +48,7 @@ class EnderecoRepositoryImpl : EnderecoRepository{
                     }
 
                 })
+        return liveData
 
     }
 
