@@ -25,8 +25,18 @@ class MainActivity : AppCompatActivity() {
             apiResponse ->
             if (apiResponse?.erro == null){
                 Log.i("TAG", "SUCESSO")
+                val end = apiResponse?.endereco
+                val zueira = "A PINGAIADA TA ROLANDO SOLTA NESTE ENDEREÇO\n DBA + PINGA = DROP DATABASE !!!"
+                tvResultado.text =
+                                   "Logadouro: ${end?.logradouro}\n" +
+                                   "Complemento: ${end?.complemento}\n" +
+                                   "Bairro: ${end?.bairro}\n" +
+                                   "Localidade: ${end?.localidade}\n" +
+                                   "UF: ${end?.uf}\n" +
+                                    "${zueira}"
+
             } else{
-                Log.i("TAG", "ERRO")
+                Log.i("TAG", "ERRO ${apiResponse.erro}..." )
             }
         })
 
